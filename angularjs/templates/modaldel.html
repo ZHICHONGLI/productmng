@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <h2>Delete Product [ID: {{delObj.id}}]</h2>
+</div>
+<div class="modal-body text-center text-danger row">
+    <h2>Delete this product?</h2>
+</div>
+<div class="modal-body row">
+    <div class="col-md-4 text-right">
+        <label>Name:</label>
+    </div>
+    <div class="col-md-8 text-left">
+        <b> {{delObj.Name}}</b>
+    </div>
+</div>
+<div class="modal-body row">
+    <div class="col-md-4 text-right">
+        <label>Description:</label>
+    </div>
+    <div class="col-md-8 text-left">
+        <b> {{delObj.Description}}</b>
+    </div>
+</div>
+
+<div class="modal-footer">
+    <button class="w3-btn w3-light-grey" ng-click="cancel()">Cancel</button>
+    <button class="w3-btn w3-red" ng-click="delComfirm()">Yes Delete</button>
+</div>

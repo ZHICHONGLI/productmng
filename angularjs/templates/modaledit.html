@@ -1,0 +1,48 @@
+<div class="modal-header">
+    <h2>Edit Product [ID: {{editObj.id}}]</h2>
+</div>
+
+<div class="modal-body row">
+    <div class="col-md-2 text-right">
+        <label>Name</label>
+    </div>
+    <div class="col-md-8 text-left">
+        <input class="w3-input w3-border" ng-model="editObj.Name" placeholder="Name">
+    </div>
+</div>
+<div class=" modal-body row">
+    <div class="col-md-2 text-right">
+        <b>Description</b>
+    </div>
+    <div class="col-md-8 text-left">
+        <textarea class="w3-input w3-border" rows="3" ng-model="editObj.Description" placeholder="Description"></textarea>
+    </div>
+</div>
+<div class="modal-body row">
+    <div class="col-md-2 text-right">
+        <b>Price</b>
+    </div>
+    <div class="col-md-8 text-left">
+        <input only-numbers class="w3-input w3-border" ng-model="editObj.Price" placeholder="Price">
+    </div>
+</div>
+<div class="modal-body row">
+    <div class="col-md-2 text-right">
+        <b>Stock</b>
+    </div>
+    <div class="col-md-8 text-left">
+        <input only-numbers class="w3-input w3-border" ng-model="editObj.Stock" placeholder="Stock">
+    </div>
+</div>
+<div class="modal-body row">
+    <div class="col-md-2 text-right">
+        <b>Packing</b>
+    </div>
+    <div class="col-md-8 text-left">
+        <input class="w3-input w3-border" ng-model="editObj.Packing" placeholder="Packing">
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="w3-btn w3-light-grey" ng-click="cancel()">Cancel</button>
+    <button class="w3-btn w3-green" ng-click="saveEdit()">Save Edit</button>
+</div>
