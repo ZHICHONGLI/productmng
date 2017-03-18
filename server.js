@@ -24,6 +24,21 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
 });
 
+app.get('/client', function(req, res) {
+    res.sendFile(path.join(__dirname, '/angularjs', 'client.html'));
+});
+
+router.route('/clilist')
+
+.get(function(req, res) {
+    Product.find(function(err, products) {
+        if (err)
+            res.send(err);
+
+        res.json(products);
+    });
+});
+
 router.route('/products')
 
 // create a user (accessed at POST http://localhost:8080/api/users)
