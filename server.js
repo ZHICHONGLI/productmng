@@ -18,12 +18,15 @@ router.use(function(req, res, next) {
     console.log('Something is happening.');
     next(); // make sure we go to the next routes and don't stop here
 });
-
-// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
-router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });
-});
-
+app.get('/manager', (req, res) => {
+        res.sendFile(path.join(__dirname, '/angularjs', 'mnger.html'))
+    })
+    // test route to make sure everything is working (accessed at GET http://localhost:8080/api)
+    /*
+    router.get('/', function(req, res) {
+        res.json({ message: 'hooray! welcome to our api!' });
+    });
+    */
 app.get('/client', function(req, res) {
     res.sendFile(path.join(__dirname, '/angularjs', 'client.html'));
 });
@@ -157,7 +160,7 @@ router.route('/products/changesta/:id')
             prd.save(function(err) {
                 if (err)
                     res.send(err);
-                res.json({ message: 'Service updated!' });
+                res.json({ message: 'Status updated!' });
             });
         });
     });

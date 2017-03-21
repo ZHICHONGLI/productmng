@@ -1,7 +1,5 @@
 var app = angular.module('cliApp', []);
 
-
-
 app.controller('cliCtrl', function($scope, $http) {
     $scope.loadList = function() {
         $http.get('/api/clilist').success(function(res) {
@@ -27,6 +25,4 @@ app.controller('cliCtrl', function($scope, $http) {
             return "Inactive"
         };
     };
-
-
 })

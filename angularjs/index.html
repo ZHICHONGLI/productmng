@@ -2,96 +2,27 @@
 <html lang="en">
 
 <head>
-    <title>Products</title>
+    <title>Product Management App</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="templates/favicon(1).ico">
-    <script src="angular.min.js"></script>
-    <script src="angular-ui-bootstrap\dist\ui-bootstrap-tpls.js"></script>
-    <script src="app.js"></script>
 </head>
 
 <body>
-    <div class="container-fluid" ng-app="myApp" ng-controller="prodCtrl">
-        <div class="row">
-            <h1>Products</h1>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <button class="w3-btn" ng-click="addPrd()"><i class="fa fa-plus" aria-hidden="true"></i> Add New Product</button>
-            </div>
-            <div class="col-md-6">
-                <a href="/client" target="_blank">
-                    <button class="w3-btn">Go to Client show list page</button>
-                </a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="panel panel-success">
-                <div class="panel-heading row">
-                    <div class="col-md-8 text-left">
-                        List of products
-                    </div>
-                    <div class="col-md-4">
-                        <div class="row">
-                            <div class="col-md-2"> Filter:</div>
-                            <div class="input-group col-md-10">
-                                <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></span>
-                                <input id="msg" type="text" class="form-control" name="msg" ng-model="search" placeholder="Filter product list...">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-body row">
-                    <table class="w3-table w3-striped">
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Stock</th>
-                            <th>Packing</th>
-                            <th>Description</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                        <tr ng-repeat="x in prdList |filter: search">
-                            <td>{{x.id}}</td>
-                            <td>{{x.Name}}</td>
-                            <td>{{x.Price}}</td>
-                            <td> <span ng-click="stockEdit(x)" ng-bind="x.Stock" ng-hide="activeItem == x"></span><input only-numbers ng-model="x.Stock" ng-show="activeItem == x" size="6"> <a href="#/" ng-click="updateStock(x)" ng-show="activeItem == x"> update |</a>
-                                <a href="#/" ng-click="hideStock(x)" ng-show="activeItem == x"> cancel</a>
-                            </td>
-                            <td>{{x.Packing}}</td>
-                            <td>{{x.Description}}</td>
-                            <td><button ng-class="statusCls(x)" ng-click="statusChange(x, $event)">{{statusAct(x)}}</button></td>
-                            <td><button class="w3-btn w3-teal" ng-click="editPrd(x)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-                                <button class="w3-btn w3-ripple" ng-click="delPrd(x)"><i class="fa fa-trash" aria-hidden="true"></i></button></td>
-                        </tr>
-                    </table>
-
-                    <hr>
-                    <!--
-                    <table class="w3-table w3-striped">
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Price</th>
-                            <th>Stock</th>
-                            <th>Packing</th>
-                            <th>Description</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
-                        <form-list ng-repeat="x in prdList |filter: search"></form-list>
-                    </table>
-                    -->
-                </div>
-            </div>
-        </div>
+    <div class="container-fluid">
+        <h1 style="text-align: center;">
+            Product Management App
+        </h1>
+    </div>
+    <hr>
+    <div class="row" style="text-align: center;">
+        <br>
+        <br>
+        <a href="/manager"><button class="btn btn-default col-md-6"><h3>GO to Manager site</h3> </button></a>
+        <a href="/client">
+            <button class="btn btn-info col-md-6"><h3>Go to Client site</h3> </button>
+        </a>
     </div>
 </body>
 
